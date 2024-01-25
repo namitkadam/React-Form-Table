@@ -1,0 +1,16 @@
+
+
+.table{
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.tablehead{
+    border: 2px solid black;
+    text-align: center;
+}
+.tableData{
+    border: 2px solid black;
+    text-align: center;
+}
