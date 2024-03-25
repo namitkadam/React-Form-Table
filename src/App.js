@@ -25,13 +25,16 @@ function App() {
   function formSubmit(e) {
     e.preventDefault();
     const checkVal = !Object.values(fromDtat).every((res) => res === "");
+    console.log(checkVal);
     if (checkVal) {
       const dataObj = (data) => [...data, fromDtat];
       setTable(dataObj);
       const isEmpty = { name: "", phone: "", email: "", age: "" };
       setFromDtat(isEmpty);
     }
-    console.log(fromDtat);
+    if (fromDtat.name === "" || fromDtat.email === "") {
+      return checkVal;
+    }
   }
   return (
     <div>
@@ -43,6 +46,7 @@ function App() {
           placeholder={"Name"}
           value={fromDtat.name}
           onChangeValue={onChangeValue}
+          required="required"
         />
         <Input
           label="Phone"
@@ -50,6 +54,7 @@ function App() {
           name="phone"
           placeholder={"Phone"}
           value={fromDtat.phone}
+          required="required"
           onChangeValue={onChangeValue}
         />
         <Input
@@ -58,6 +63,7 @@ function App() {
           name="email"
           placeholder={"Email"}
           value={fromDtat.email}
+          required="required"
           onChangeValue={onChangeValue}
         />
         <Input
@@ -67,6 +73,7 @@ function App() {
           placeholder={"Age"}
           value={fromDtat.age}
           onChangeValue={onChangeValue}
+          required="required"
         />
 
         <Button fromSubmit={formSubmit} />

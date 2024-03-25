@@ -1,6 +1,9 @@
 import "./Table.css";
 
 function Table({ tableData }) {
+  if (tableData.name === "") {
+    console.log("hey");
+  }
   return (
     <table className="table">
       <thead>

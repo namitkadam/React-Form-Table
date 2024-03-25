@@ -1,4 +1,13 @@
-function Input({ label, type, name, placeholder, value, onChangeValue }) {
+function Input({
+  label,
+  type,
+  name,
+  placeholder,
+  value,
+  onChangeValue,
+  className,
+  required,
+}) {
   return (
     <>
       <div className="flex flex-col gap-1 mb-2">
@@ -9,7 +18,10 @@ function Input({ label, type, name, placeholder, value, onChangeValue }) {
           placeholder={placeholder}
           value={value}
           onChange={onChangeValue}
-          className="form-input border-2 border-stone-900 px-1 h-8"
+          required={required}
+          className={
+            "form-input border-2 border-stone-900 px-1 h-8" || className
+          }
         />
       </div>
     </>
